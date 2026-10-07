@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="es" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bar Bocatería El Búho · Toledo</title>
+  <meta name="description" content="Bar Bocatería El Búho en Toledo (Polígono). Bocatas, hamburguesas, tapas generosas y cañas bien tiradas junto al parque. P.º Federico García Lorca, 6. Tel. 607 96 83 10.">
+  <meta name="theme-color" content="#14110d">
+  <meta property="og:title" content="Bar Bocatería El Búho · Toledo">
+  <meta property="og:description" content="Bocatas, hamburguesas, tapas y terraza junto al parque en el barrio del Polígono, Toledo.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/hero-bocadillo.jpg">
+  <script>document.documentElement.className = "js";</script>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BarOrPub",
+    "name": "Bar Bocatería El Búho",
+    "image": "assets/img/hero-bocadillo.jpg",
+    "telephone": "+34 607 96 83 10",
+    "priceRange": "10-20 €",
+    "servesCuisine": ["Bocadillos", "Tapas", "Hamburguesas"],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "P.º Federico García Lorca, 6",
+      "postalCode": "45007",
+      "addressLocality": "Toledo",
+      "addressCountry": "ES"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 39.8676933, "longitude": -3.9420914 },
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.1", "reviewCount": "548" },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday"], "opens": "11:00", "closes": "01:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "11:00", "closes": "02:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "12:00", "closes": "01:00" }
+    ]
+  }
+  </script>
+</head>
+<body class="is-loading">
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__owl">
+      <svg viewBox="0 0 120 120" width="96" height="96"><use href="#owl"/></svg>
+    </div>
+    <div class="preloader__bar"><span id="preloaderBar"></span></div>
+    <p class="preloader__text">Tirando la primera caña…</p>
+  </div>
+
+  <!-- SVG sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="owl" viewBox="0 0 120 120">
+      <path d="M22 30 L38 44 Q60 34 82 44 L98 30 L94 62 Q94 104 60 108 Q26 104 26 62 Z" fill="currentColor"/>
+      <circle cx="44" cy="60" r="15" fill="#14110d"/>
+      <circle cx="76" cy="60" r="15" fill="#14110d"/>
+      <circle cx="44" cy="60" r="7" fill="#f2b33d"/>
+      <circle cx="76" cy="60" r="7" fill="#f2b33d"/>
+      <path d="M55 72 L60 82 L65 72 Z" fill="#f2b33d"/>
+    </symbol>
+    <symbol id="i-tree" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-6"/><path d="M8 16h8a4 4 0 0 0 1.2-7.8A5 5 0 0 0 7.5 6.5 4.5 4.5 0 0 0 8 16z"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 13H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></symbol>
+    <symbol id="i-access" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4" r="1.6"/><path d="M12 7v6h5l2 6"/><path d="M8.5 10.5a6 6 0 1 0 7.8 8"/></symbol>
+    <symbol id="i-euro" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 6.5A7 7 0 1 0 17.5 17.5"/><path d="M4 10h9M4 14h9"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></symbol>
+    <symbol id="i-car" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 16V11l2-5h10l2 5v5"/><path d="M3 16h18v2H3z"/><circle cx="7.5" cy="13" r=".8"/><circle cx="16.5" cy="13" r=".8"/></symbol>
+  </svg>
+
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="nav" id="nav">
+    <a href="#inicio" class="nav__brand" aria-label="El Búho, ir al inicio">
+      <svg viewBox="0 0 120 120" width="34" height="34"><use href="#owl"/></svg>
+      <span>El Búho</span>
+    </a>
+    <nav class="nav__links" id="navLinks" aria-label="Principal">
+      <a href="#nosotros">Nosotros</a>
+      <a href="#horario">Horario</a>
+      <a href="#carta">Carta</a>
+      <a href="#galeria">Galería</a>
+      <a href="#resenas">Reseñas</a>
+      <a href="#encontrarnos">Cómo llegar</a>
+      <a href="#reservas" class="btn btn--small btn--gold magnetic">Reservar</a>
+    </nav>
+    <div class="nav__status status-pill" data-status-pill>
+      <span class="status-pill__dot"></span><span data-status-short>…</span>
+    </div>
+    <button class="nav__burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="hero__bg" data-parallax="0.35">
+        <img src="assets/img/hero-bocadillo.jpg" alt="Bocadillo recién hecho sobre la barra" fetchpriority="high">
+      </div>
+      <canvas class="hero__fireflies" id="fireflies" aria-hidden="true"></canvas>
+      <div class="hero__overlay"></div>
+
+      <div class="hero__content container">
+        <p class="eyebrow reveal">Bar · Bocatería · Terraza — Toledo</p>
+        <h1 class="hero__title" aria-label="El Búho">
+          <span class="split" data-split>El Búho</span>
+        </h1>
+        <p class="hero__lead reveal" data-delay="300">
+          Bocatas como los de siempre, hamburguesas caseras, tapas generosas con cada caña
+          y una terraza junto al parque en pleno <strong>Polígono de Toledo</strong>.
+        </p>
+        <div class="hero__ctas reveal" data-delay="450">
+          <a href="#reservas" class="btn btn--gold magnetic">Reservar mesa</a>
+          <a href="#carta" class="btn btn--ghost magnetic">Ver la carta</a>
+        </div>
+        <div class="hero__live reveal" data-delay="600">
+          <div class="status-card" data-status-card>
+            <span class="status-pill__dot"></span>
+            <div>
+              <strong data-status-long>Comprobando horario…</strong>
+              <small data-status-sub></small>
+            </div>
+          </div>
+          <a class="hero__phone" href="tel:+34607968310">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+            607 96 83 10
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__owl" id="heroOwl" aria-hidden="true">
+        <svg viewBox="0 0 200 200" width="200" height="200">
+          <path class="owl-body" d="M40 50 L66 74 Q100 58 134 74 L160 50 L154 104 Q154 172 100 180 Q46 172 46 104 Z"/>
+          <path class="owl-belly" d="M70 120 Q100 100 130 120 Q130 165 100 170 Q70 165 70 120Z"/>
+          <g class="owl-eye" data-eye>
+            <circle cx="74" cy="100" r="24" class="owl-eye__white"/>
+            <circle cx="74" cy="100" r="11" class="owl-eye__pupil" data-pupil/>
+            <circle cx="70" cy="95" r="3.5" fill="#fff" data-pupil-shine/>
+            <rect class="owl-eye__lid" x="48" y="74" width="52" height="0" rx="4"/>
+          </g>
+          <g class="owl-eye" data-eye>
+            <circle cx="126" cy="100" r="24" class="owl-eye__white"/>
+            <circle cx="126" cy="100" r="11" class="owl-eye__pupil" data-pupil/>
+            <circle cx="122" cy="95" r="3.5" fill="#fff" data-pupil-shine/>
+            <rect class="owl-eye__lid" x="100" y="74" width="52" height="0" rx="4"/>
+          </g>
+          <path d="M92 118 L100 134 L108 118 Z" fill="#f2b33d"/>
+        </svg>
+      </div>
+
+      <a href="#nosotros" class="hero__scroll" aria-label="Bajar">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee-wrap" aria-hidden="true"><div class="marquee">
+      <div class="marquee__track">
+        <span>Bocatas</span><i>✦</i><span>Hamburguesas</span><i>✦</i><span>Tapas con cada caña</span><i>✦</i><span>Terraza junto al parque</span><i>✦</i><span>Para llevar</span><i>✦</i><span>Pulguitas</span><i>✦</i><span>Cerveza bien fría</span><i>✦</i>
+        <span>Bocatas</span><i>✦</i><span>Hamburguesas</span><i>✦</i><span>Tapas con cada caña</span><i>✦</i><span>Terraza junto al parque</span><i>✦</i><span>Para llevar</span><i>✦</i><span>Pulguitas</span><i>✦</i><span>Cerveza bien fría</span><i>✦</i>
+      </div>
+    </div></div>
+
+    <!-- STATS -->
+    <section class="stats container" aria-label="El Búho en cifras">
+      <div class="stat reveal">
+        <span class="stat__num"><span data-count="4.1" data-decimals="1">0</span><small>/5</small></span>
+        <span class="stat__label">Valoración en Google</span>
+        <div class="stars" data-stars="4.1"><span></span></div>
+      </div>
+      <div class="stat reveal" data-delay="100">
+        <span class="stat__num"><span data-count="548">0</span></span>
+        <span class="stat__label">Reseñas de clientes</span>
+      </div>
+      <div class="stat reveal" data-delay="200">
+        <span class="stat__num"><span data-count="15">0</span><small>h</small></span>
+        <span class="stat__label">Abierto al día (vie y sáb)</span>
+      </div>
+      <div class="stat reveal" data-delay="300">
+        <span class="stat__num"><span data-count="6">0</span><small>días</small></span>
+        <span class="stat__label">a la semana, de martes a domingo</span>
+      </div>
+    </section>
+
+    <!-- NOSOTROS -->
+    <section class="about section" id="nosotros">
+      <div class="container about__grid">
+        <div class="about__media reveal">
+          <div class="tilt" data-tilt>
+            <img src="assets/img/tapas.jpg" alt="Barra con pinchos y tapas variadas" loading="lazy">
+          </div>
+          <div class="about__badge">
+            <strong>Tapa</strong>
+            <span>con cada consumición</span>
+          </div>
+        </div>
+        <div class="about__text">
+          <p class="eyebrow reveal">Nuestra casa</p>
+          <h2 class="section__title reveal">El bar de barrio de <em>toda la vida</em>, a la sombra del parque</h2>
+          <p class="reveal">
+            En El Búho las cañas vienen con su tapa y los bocatas se hacen al momento.
+            Hamburguesas caseras (la de pollo es de las favoritas), pulguitas, raciones para compartir
+            y unas migas de pincho que ya tienen fama en el barrio.
+          </p>
+          <p class="reveal">
+            Abrimos de martes a domingo desde las 11:00 y cerramos tarde, así que da igual si vienes
+            a desayunar, a tomar el aperitivo, a ver el partido o a cenar en la terraza.
+          </p>
+          <ul class="features">
+            <li class="feature reveal"><span class="feature__icon"><svg class="ico" aria-hidden="true"><use href="#i-tree"/></svg></span><div><strong>Terraza</strong><small>Junto al parque</small></div></li>
+            <li class="feature reveal" data-delay="80"><span class="feature__icon"><svg class="ico" aria-hidden="true"><use href="#i-bag"/></svg></span><div><strong>Para llevar</strong><small>Pide y recoge</small></div></li>
+            <li class="feature reveal" data-delay="160"><span class="feature__icon"><svg class="ico" aria-hidden="true"><use href="#i-access"/></svg></span><div><strong>Accesible</strong><small>Silla de ruedas</small></div></li>
+            <li class="feature reveal" data-delay="240"><span class="feature__icon"><svg class="ico" aria-hidden="true"><use href="#i-euro"/></svg></span><div><strong>10–20 €</strong><small>por persona</small></div></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- HORARIO / ABIERTO -->
+    <section class="hours section section--alt" id="horario">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow reveal">Horario</p>
+          <h2 class="section__title reveal">¿Está abierto <em>ahora</em>?</h2>
+        </div>
+
+        <div class="hours__grid">
+          <div class="live reveal" data-status-panel>
+            <div class="live__top">
+              <span class="live__badge" data-status-badge>
+                <span class="status-pill__dot"></span>
+                <span data-status-short>…</span>
+              </span>
+              <span class="live__clock" id="liveClock" aria-live="off">--:--:--</span>
+            </div>
+            <p class="live__title" data-status-long>Comprobando…</p>
+            <p class="live__sub" data-status-sub></p>
+
+            <div class="countdown" aria-live="polite">
+              <div class="countdown__unit"><span data-cd="h">00</span><small>horas</small></div>
+              <div class="countdown__sep">:</div>
+              <div class="countdown__unit"><span data-cd="m">00</span><small>min</small></div>
+              <div class="countdown__sep">:</div>
+              <div class="countdown__unit"><span data-cd="s">00</span><small>seg</small></div>
+            </div>
+            <p class="countdown__label" data-cd-label></p>
+
+            <div class="dayline" aria-hidden="true">
+              <div class="dayline__track">
+                <div class="dayline__open" data-dayline-open></div>
+                <div class="dayline__now" data-dayline-now></div>
+              </div>
+              <div class="dayline__ticks"><span>00</span><span>06</span><span>12</span><span>18</span><span>24</span></div>
+            </div>
+            <div class="live__actions">
+              <a href="tel:+34607968310" class="btn btn--ghost btn--small">Llamar</a>
+              <a href="#reservas" class="btn btn--gold btn--small">Reservar mesa</a>
+            </div>
+            <p class="live__tz">Hora de Toledo (Europe/Madrid)</p>
+          </div>
+
+          <div class="week reveal" data-delay="150">
+            <ul class="week__list" id="weekList"></ul>
+            <p class="week__note">Festivos y días especiales el horario puede cambiar. Si vienes en grupo, mejor <a href="tel:+34607968310">llámanos</a> antes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CARTA -->
+    <section class="menu section" id="carta">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow reveal">La carta</p>
+          <h2 class="section__title reveal">Para picar, para compartir <em>y para repetir</em></h2>
+        </div>
+
+        <div class="menu__tabs reveal" role="tablist" aria-label="Categorías de la carta" id="menuTabs">
+          <button role="tab" aria-selected="true" data-filter="all">Todo</button>
+          <button role="tab" aria-selected="false" data-filter="bocatas">Bocatas</button>
+          <button role="tab" aria-selected="false" data-filter="burgers">Hamburguesas</button>
+          <button role="tab" aria-selected="false" data-filter="tapas">Raciones y tapas</button>
+          <button role="tab" aria-selected="false" data-filter="bebidas">Bebidas</button>
+          <span class="menu__tabs-ink" aria-hidden="true"></span>
+        </div>
+
+        <div class="menu__search reveal">
+          <input type="search" id="menuSearch" placeholder="Busca en la carta: pollo, bravas, cerveza…" aria-label="Buscar en la carta">
+        </div>
+
+        <div class="menu__grid" id="menuGrid"></div>
+        <p class="menu__empty" id="menuEmpty" hidden>No hay nada con ese nombre… ¡pregúntanos en barra!</p>
+        <p class="menu__note">Precios orientativos con IVA incluido. La carta puede variar según el día; pregunta por las sugerencias fuera de carta.</p>
+      </div>
+    </section>
+
+    <!-- GALERIA -->
+    <section class="gallery section section--alt" id="galeria">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow reveal">Galería</p>
+          <h2 class="section__title reveal">Entra por los <em>ojos</em></h2>
+        </div>
+        <div class="gallery__grid" id="galleryGrid"></div>
+      </div>
+    </section>
+
+    <!-- RESEÑAS -->
+    <section class="reviews section" id="resenas">
+      <div class="container reviews__grid">
+        <div class="reviews__summary reveal">
+          <p class="eyebrow">Lo que dicen</p>
+          <div class="reviews__score">
+            <span data-count="4.1" data-decimals="1">0</span>
+            <div>
+              <div class="stars stars--lg" data-stars="4.1"><span></span></div>
+              <small><span data-count="548">0</span> reseñas en Google</small>
+            </div>
+          </div>
+          <ul class="tags">
+            <li>tapas <b>48</b></li>
+            <li>parque <b>19</b></li>
+            <li>bocatas <b>17</b></li>
+            <li>terraza <b>17</b></li>
+          </ul>
+          <p class="reviews__others">También en Tripadvisor <b>4,5/5</b> y Facebook <b>4,3/5</b>.</p>
+        </div>
+
+        <div class="carousel reveal" data-delay="150" id="carousel" aria-roledescription="carrusel" aria-label="Opiniones de clientes">
+          <div class="carousel__viewport">
+            <div class="carousel__track" id="carouselTrack"></div>
+          </div>
+          <div class="carousel__controls">
+            <button class="carousel__btn" data-dir="-1" aria-label="Opinión anterior">←</button>
+            <div class="carousel__dots" id="carouselDots"></div>
+            <button class="carousel__btn" data-dir="1" aria-label="Opinión siguiente">→</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESERVAS -->
+    <section class="booking section section--alt" id="reservas">
+      <div class="container booking__grid">
+        <div class="booking__intro">
+          <p class="eyebrow reveal">Reservas</p>
+          <h2 class="section__title reveal">Guárdate <em>mesa</em> en la terraza</h2>
+          <p class="reveal">Rellena el formulario y te abrimos WhatsApp con la reserva lista para enviar. Si lo prefieres, llámanos directamente.</p>
+          <a href="tel:+34607968310" class="booking__phone reveal magnetic">
+            <span>Llámanos</span>
+            <strong>607 96 83 10</strong>
+          </a>
+          <ul class="booking__tips reveal">
+            <li>Grupos de más de 10 personas: mejor por teléfono.</li>
+            <li>Los lunes descansamos.</li>
+            <li>La terraza depende del tiempo.</li>
+          </ul>
+        </div>
+
+        <form class="form reveal" id="bookingForm" novalidate data-delay="150">
+          <div class="form__row">
+            <div class="field">
+              <input id="fName" name="name" type="text" placeholder=" " required minlength="2" autocomplete="name">
+              <label for="fName">Nombre</label>
+              <small class="field__error"></small>
+            </div>
+            <div class="field">
+              <input id="fPhone" name="phone" type="tel" placeholder=" " required pattern="[0-9 +]{9,15}" autocomplete="tel">
+              <label for="fPhone">Teléfono</label>
+              <small class="field__error"></small>
+            </div>
+          </div>
+          <div class="form__row">
+            <div class="field">
+              <input id="fDate" name="date" type="date" placeholder=" " required>
+              <label for="fDate">Día</label>
+              <small class="field__error"></small>
+            </div>
+            <div class="field">
+              <select id="fTime" name="time" required>
+                <option value="">Elige primero el día</option>
+              </select>
+              <label for="fTime" class="is-fixed">Hora</label>
+              <small class="field__error"></small>
+            </div>
+          </div>
+
+          <div class="field field--people">
+            <span class="field__legend">Personas</span>
+            <div class="stepper">
+              <button type="button" data-step="-1" aria-label="Una persona menos">−</button>
+              <output id="fPeople" name="people" aria-live="polite">2</output>
+              <button type="button" data-step="1" aria-label="Una persona más">+</button>
+            </div>
+          </div>
+
+          <div class="field field--zone">
+            <span class="field__legend">Zona</span>
+            <div class="segmented" role="radiogroup" aria-label="Zona">
+              <label><input type="radio" name="zone" value="Terraza" checked><span>Terraza</span></label>
+              <label><input type="radio" name="zone" value="Interior"><span>Interior</span></label>
+              <label><input type="radio" name="zone" value="Me da igual"><span>Me da igual</span></label>
+            </div>
+          </div>
+
+          <div class="field">
+            <textarea id="fNotes" name="notes" rows="3" placeholder=" " maxlength="300"></textarea>
+            <label for="fNotes">Comentarios (alergias, carrito, cumpleaños…)</label>
+            <small class="field__counter"><span id="notesCount">0</span>/300</small>
+          </div>
+
+          <button type="submit" class="btn btn--gold btn--block magnetic">
+            <span>Enviar reserva por WhatsApp</span>
+          </button>
+          <p class="form__hint">La reserva no está confirmada hasta que te respondamos.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ENCONTRARNOS -->
+    <section class="find section" id="encontrarnos">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow reveal">Cómo encontrarnos</p>
+          <h2 class="section__title reveal">En el Polígono, <em>junto al parque</em></h2>
+        </div>
+        <div class="find__grid">
+          <div class="find__info reveal">
+            <div class="info-row">
+              <span class="info-row__icon"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg></span>
+              <div>
+                <strong>Dirección</strong>
+                <p>P.º Federico García Lorca, 6<br>45007 Toledo (Santa María de Benquerencia)</p>
+                <button class="link-btn" data-copy="P.º Federico García Lorca, 6, 45007 Toledo">Copiar dirección</button>
+              </div>
+            </div>
+            <div class="info-row">
+              <span class="info-row__icon"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg></span>
+              <div>
+                <strong>Teléfono</strong>
+                <p><a href="tel:+34607968310">607 96 83 10</a></p>
+              </div>
+            </div>
+            <div class="info-row">
+              <span class="info-row__icon"><svg class="ico" aria-hidden="true"><use href="#i-compass"/></svg></span>
+              <div>
+                <strong>Plus Code</strong>
+                <p>V395+35 Toledo</p>
+              </div>
+            </div>
+            <div class="info-row">
+              <span class="info-row__icon"><svg class="ico" aria-hidden="true"><use href="#i-car"/></svg></span>
+              <div>
+                <strong>Distancia desde ti</strong>
+                <p id="distanceText">Pulsa para calcularla con tu ubicación.</p>
+                <button class="link-btn" id="distanceBtn">Calcular distancia</button>
+              </div>
+            </div>
+            <div class="find__ctas">
+              <a class="btn btn--gold btn--small" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=39.8676933,-3.9420914">Google Maps</a>
+              <a class="btn btn--ghost btn--small" target="_blank" rel="noopener" href="https://waze.com/ul?ll=39.8676933,-3.9420914&navigate=yes">Waze</a>
+              <a class="btn btn--ghost btn--small" target="_blank" rel="noopener" href="https://maps.apple.com/?daddr=39.8676933,-3.9420914&q=Bar%20Bocateria%20El%20Buho">Apple Maps</a>
+            </div>
+          </div>
+          <div class="find__map reveal" data-delay="150">
+            <div id="map" role="region" aria-label="Mapa con la ubicación de El Búho"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq section section--alt" id="faq">
+      <div class="container faq__inner">
+        <div class="section__head">
+          <p class="eyebrow reveal">Dudas rápidas</p>
+          <h2 class="section__title reveal">Preguntas <em>frecuentes</em></h2>
+        </div>
+        <div class="accordion">
+          <details class="reveal"><summary>¿Ponéis tapa con la bebida?</summary><p>Sí. Con cada consumición va su tapa; las migas de pincho son de las que más gustan.</p></details>
+          <details class="reveal"><summary>¿Se puede pedir para llevar?</summary><p>Claro. Llama al 607 96 83 10, haz tu pedido y pásate a recogerlo. De momento no hacemos reparto a domicilio.</p></details>
+          <details class="reveal"><summary>¿Tenéis terraza?</summary><p>Sí, una terraza junto al parque, ideal para ir con niños o para las noches de verano.</p></details>
+          <details class="reveal"><summary>¿El local es accesible?</summary><p>Sí, la entrada es accesible para sillas de ruedas.</p></details>
+          <details class="reveal"><summary>¿Qué día cerráis?</summary><p>Los lunes. De martes a jueves abrimos de 11:00 a 1:00, viernes y sábado de 11:00 a 2:00 y domingo de 12:00 a 1:00.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <svg viewBox="0 0 120 120" width="48" height="48"><use href="#owl"/></svg>
+        <div>
+          <strong>Bar Bocatería El Búho</strong>
+          <p>P.º Federico García Lorca, 6 · 45007 Toledo</p>
+          <p><a href="tel:+34607968310">607 96 83 10</a></p>
+        </div>
+      </div>
+      <div class="footer__hours" id="footerHours"></div>
+      <div class="footer__links">
+        <a href="#horario">Horario</a>
+        <a href="#carta">Carta</a>
+        <a href="#reservas">Reservas</a>
+        <a href="#encontrarnos">Cómo llegar</a>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© <span id="year"></span> Bar Bocatería El Búho · Toledo</p>
+      <button class="link-btn" id="creditsBtn">Créditos de las fotos</button>
+    </div>
+  </footer>
+
+  <a href="#inicio" class="to-top" id="toTop" aria-label="Volver arriba">↑</a>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto ampliada" hidden>
+    <button class="lightbox__close" data-lb="close" aria-label="Cerrar">×</button>
+    <button class="lightbox__nav lightbox__nav--prev" data-lb="prev" aria-label="Foto anterior">‹</button>
+    <figure>
+      <img id="lightboxImg" alt="">
+      <figcaption id="lightboxCap"></figcaption>
+    </figure>
+    <button class="lightbox__nav lightbox__nav--next" data-lb="next" aria-label="Foto siguiente">›</button>
+  </div>
+
+  <!-- Modal créditos / reserva -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal__box">
+      <button class="modal__close" data-modal-close aria-label="Cerrar">×</button>
+      <h3 id="modalTitle"></h3>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" defer></script>
+  <script src="js/data.js" defer></script>
+  <script src="js/horario.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
