@@ -14,29 +14,40 @@ Es una web estática (HTML + CSS + JavaScript, sin dependencias de compilación)
 - Animaciones: preloader, título animado letra a letra, luciérnagas en canvas, búho que sigue el cursor, parallax, efectos de inclinación (tilt) y botones magnéticos.
 - Diseño adaptable a móvil y respeta `prefers-reduced-motion`.
 
+## Requisitos
+
+Node.js 20.19+ o 22.12+ (ver `.nvmrc`).
+
+## Uso
+
+```bash
+npm install
+npm run preview   # compila y sirve la versión de producción (http://localhost:4173)
+npm run dev       # servidor de desarrollo con recarga en caliente
+npm run build     # genera la web estática en dist/
+npm run lint      # ESLint
+npm test          # tests de la lógica de horario y distancia (Vitest)
+```
+
 ## Estructura
 
 ```
-index.html        Página principal
-css/styles.css    Estilos
-js/data.js        Datos editables: horario, carta, galería, reseñas, créditos
-js/horario.js     Lógica de abierto/cerrado
-js/main.js        Interacciones y animaciones
-assets/           Imágenes y favicon
+index.html                 Página (punto de entrada de Vite)
+public/                    Favicon e imagen para redes sociales
+src/main.js                Arranque: inicia cada componente
+src/components/            Un módulo por sección (horario, carta, galería, reservas, mapa…)
+src/lib/schedule.js        Lógica pura de abierto/cerrado (con tests)
+src/lib/geo.js             Cálculo de distancias (con tests)
+src/data/bar.js            Datos editables: horario, carta, galería, reseñas, créditos
+src/styles/main.css        Estilos
+src/assets/img/            Fotos (Vite las versiona en el build)
 ```
 
-Para cambiar platos, precios, fotos o el horario, edita **`js/data.js`**.
-
-## Verla en local
-
-```bash
-python3 -m http.server 8000
-# abre http://localhost:8000
-```
+Para cambiar platos, precios, fotos o el horario, edita **`src/data/bar.js`**.
 
 ## Publicar con GitHub Pages
 
-En el repositorio: *Settings → Pages → Source: Deploy from a branch → `main` / root*.
+`npm run build` genera `dist/` con rutas relativas, así que funciona en cualquier subcarpeta.
 
 ## Notas
 

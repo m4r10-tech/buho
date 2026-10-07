@@ -218,6 +218,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .hero__phone { display: inline-flex; align-items: center; gap: 8px; color: var(--text); font-weight: 700; font-size: 1.05rem; }
 .hero__phone svg { color: var(--gold); }
 .hero__owl {
+  background: none; border: 0; padding: 0; cursor: pointer;
   position: absolute; right: max(16px, calc((100% - 1200px) / 2)); bottom: 12%; z-index: 1;
   width: clamp(130px, 20vw, 240px); animation: owlFloat 6s ease-in-out infinite;
   filter: drop-shadow(0 30px 40px rgba(0, 0, 0, .55));
@@ -516,17 +517,17 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .find__map { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--line); min-height: 460px; position: relative; }
 #map { position: absolute; inset: 0; background: var(--bg-3); }
 .map-fallback { width: 100%; height: 100%; border: 0; filter: invert(.9) hue-rotate(180deg) saturate(.6); }
-.leaflet-container { font-family: var(--font-body); background: #1a1714; }
-.leaflet-tile-pane { filter: invert(1) hue-rotate(185deg) brightness(.9) contrast(.85) saturate(.35) sepia(.25); }
-.leaflet-popup-content a { color: var(--gold); font-weight: 700; }
-.leaflet-popup-content-wrapper, .leaflet-popup-tip { background: var(--bg-2); color: var(--text); border: 1px solid var(--line); }
-.leaflet-popup-content { margin: 14px 18px; font-size: .92rem; }
-.leaflet-popup-content strong { font-family: var(--font-display); font-size: 1.1rem; color: var(--gold); }
-.leaflet-container a.leaflet-popup-close-button { color: var(--muted); }
-.leaflet-control-attribution { background: rgba(20, 17, 13, .75) !important; color: var(--muted) !important; }
-.leaflet-control-attribution a { color: var(--gold) !important; }
-.leaflet-bar a { background: var(--bg-2) !important; color: var(--text) !important; border-color: var(--line) !important; }
-.owl-marker { color: var(--gold); filter: drop-shadow(0 6px 10px rgba(0, 0, 0, .6)); animation: markerBounce 2.2s var(--ease) infinite; }
+#map.leaflet-container { font-family: var(--font-body); background: #1a1714; }
+#map .leaflet-tile-pane { filter: invert(1) hue-rotate(185deg) brightness(.9) contrast(.85) saturate(.35) sepia(.25); }
+#map .leaflet-popup-content a { color: var(--gold); font-weight: 700; }
+#map .leaflet-popup-content-wrapper, #map .leaflet-popup-tip { background: var(--bg-2); color: var(--text); border: 1px solid var(--line); }
+#map .leaflet-popup-content { margin: 14px 18px; font-size: .92rem; }
+#map .leaflet-popup-content strong { font-family: var(--font-display); font-size: 1.1rem; color: var(--gold); }
+#map.leaflet-container a.leaflet-popup-close-button { color: var(--muted); }
+#map .leaflet-control-attribution { background: rgba(20, 17, 13, .75) !important; color: var(--muted) !important; }
+#map .leaflet-control-attribution a { color: var(--gold) !important; }
+#map .leaflet-bar a { background: var(--bg-2) !important; color: var(--text) !important; border-color: var(--line) !important; }
+.owl-marker { width: 54px; height: 54px; position: relative; color: var(--gold); filter: drop-shadow(0 6px 10px rgba(0, 0, 0, .6)); animation: markerBounce 2.2s var(--ease) infinite; }
 .owl-marker svg { width: 100%; height: 100%; }
 .owl-marker__pulse { position: absolute; left: 50%; bottom: -6px; width: 30px; height: 10px; margin-left: -15px; border-radius: 50%; background: rgba(242, 179, 61, .45); animation: markerPulse 2.2s var(--ease) infinite; }
 @keyframes markerBounce { 0%, 100% { transform: translateY(0); } 40% { transform: translateY(-12px); } }
@@ -576,6 +577,9 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .modal__box h3 { font-family: var(--font-display); font-size: 1.6rem; margin: 0 0 14px; }
 .modal__box ul { padding-left: 18px; color: var(--muted); font-size: .9rem; }
 .modal__box li { margin-bottom: 6px; }
+.modal__muted { color: var(--muted); }
+.modal__small { font-size: .88rem; }
+.modal__actions { display: flex; flex-wrap: wrap; gap: 10px; }
 .modal__close { position: absolute; top: 12px; right: 12px; width: 40px; height: 40px; border-radius: 50%; border: 0; background: var(--bg-3); font-size: 1.4rem; }
 .modal__close:hover { background: var(--gold); color: #1b1408; }
 .summary-list { list-style: none; padding: 0 !important; display: grid; gap: 6px; }

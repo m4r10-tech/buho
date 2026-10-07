@@ -9,20 +9,18 @@
   <meta property="og:title" content="Bar Bocatería El Búho · Toledo">
   <meta property="og:description" content="Bocatas, hamburguesas, tapas y terraza junto al parque en el barrio del Polígono, Toledo.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/img/hero-bocadillo.jpg">
+  <meta property="og:image" content="og-image.jpg">
   <script>document.documentElement.className = "js";</script>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
-  <link rel="stylesheet" href="css/styles.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "BarOrPub",
     "name": "Bar Bocatería El Búho",
-    "image": "assets/img/hero-bocadillo.jpg",
+    "image": "og-image.jpg",
     "telephone": "+34 607 96 83 10",
     "priceRange": "10-20 €",
     "servesCuisine": ["Bocadillos", "Tapas", "Hamburguesas"],
@@ -104,7 +102,7 @@
     <!-- HERO -->
     <section class="hero" id="inicio">
       <div class="hero__bg" data-parallax="0.35">
-        <img src="assets/img/hero-bocadillo.jpg" alt="Bocadillo recién hecho sobre la barra" fetchpriority="high">
+        <img src="/src/assets/img/hero-bocadillo.jpg" alt="Bocadillo recién hecho sobre la barra" fetchpriority="high">
       </div>
       <canvas class="hero__fireflies" id="fireflies" aria-hidden="true"></canvas>
       <div class="hero__overlay"></div>
@@ -137,7 +135,7 @@
         </div>
       </div>
 
-      <div class="hero__owl" id="heroOwl" aria-hidden="true">
+      <button type="button" class="hero__owl" id="heroOwl" aria-label="Saluda al búho">
         <svg viewBox="0 0 200 200" width="200" height="200">
           <path class="owl-body" d="M40 50 L66 74 Q100 58 134 74 L160 50 L154 104 Q154 172 100 180 Q46 172 46 104 Z"/>
           <path class="owl-belly" d="M70 120 Q100 100 130 120 Q130 165 100 170 Q70 165 70 120Z"/>
@@ -155,7 +153,7 @@
           </g>
           <path d="M92 118 L100 134 L108 118 Z" fill="#f2b33d"/>
         </svg>
-      </div>
+      </button>
 
       <a href="#nosotros" class="hero__scroll" aria-label="Bajar">
         <span></span>
@@ -196,7 +194,7 @@
       <div class="container about__grid">
         <div class="about__media reveal">
           <div class="tilt" data-tilt>
-            <img src="assets/img/tapas.jpg" alt="Barra con pinchos y tapas variadas" loading="lazy">
+            <img src="/src/assets/img/tapas.jpg" alt="Barra con pinchos y tapas variadas" loading="lazy">
           </div>
           <div class="about__badge">
             <strong>Tapa</strong>
@@ -544,9 +542,6 @@
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" defer></script>
-  <script src="js/data.js" defer></script>
-  <script src="js/horario.js" defer></script>
-  <script src="js/main.js" defer></script>
+  <script type="module" src="/src/main.js"></script>
 </body>
 </html>
